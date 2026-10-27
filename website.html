@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSU Student Hub</title>
+    <link rel="stylesheet" href="ryann.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast"></div>
+
+    <section id="authView" class="auth-layout">
+      <aside class="brand-panel">
+        <div class="brand-mark">SSU</div>
+        <p class="eyebrow">SAMAR STATE UNIVERSITY</p>
+        <h1>Your campus.<br /><span>One hub.</span></h1>
+        <p class="brand-copy">
+          A simpler way to stay connected with school announcements, schedules,
+          and learning resources.
+        </p>
+        <div class="brand-foot">LEARN · CONNECT · GROW</div>
+      </aside>
+
+      <main class="auth-panel">
+        <div class="auth-card">
+          <div class="mobile-brand">
+            <span class="brand-mark small">SSU</span>
+            <span>Student Hub</span>
+          </div>
+
+          <div class="auth-tabs">
+            <button class="tab active" data-auth="login">Log in</button>
+            <button class="tab" data-auth="register">Create account</button>
+          </div>
+
+          <form id="loginForm" class="auth-form">
+            <p class="eyebrow">WELCOME BACK</p>
+            <h2>Sign in to your hub</h2>
+            <p class="muted">Use your registered school email to continue.</p>
+
+            <label
+              >Email address
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+              />
+            </label>
+
+            <label
+              >Password
+              <div class="password-field">
+                <input
+                  id="loginPassword"
+                  type="password"
+                  name="password"
+                  required
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  data-password-toggle="loginPassword"
+                  aria-label="Show password"
+                >
+                  <svg class="eye-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </label>
+
+            <button class="primary full">Log in <span>→</span></button>
+
+            <p class="demo-hint">
+              Demo student: <b>student@ssu.edu.ph</b> /
+              <b>Student123!</b>
+            </p>
+            <p class="form-note">
+              This version uses this browser's local storage.
+            </p>
+          </form>
+
+          <form id="registerForm" class="auth-form hidden">
+            <p class="eyebrow">GET STARTED</p>
+            <h2>Create your account</h2>
+            <p class="muted">Enter your details to join SSU Student Hub.</p>
+
+            <div class="form-grid">
+              <label class="wide"
+                >Full name
+                <input
+                  name="name"
+                  required
+                  minlength="2"
+                  placeholder="Your complete name"
+                />
+              </label>
+
+              <label
+                >Email address
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </label>
+
+              <label
+                >Age
+                <input
+                  type="number"
+                  name="age"
+                  min="12"
+                  max="100"
+                  required
+                  placeholder="12 or older"
+                />
+              </label>
+
+              <label class="wide"
+                >Education level
+                <select name="educationLevel" id="educationLevel" required>
+                  <option value="">Select education level</option>
+                  <option>College</option>
+                  <option>Senior High School</option>
+                  <option>Junior High School</option>
+                </select>
+              </label>
+
+              <label class="wide"
+                >Course / strand / grade
+                <select name="program" id="program" required>
+                  <option value="">Select course / strand / grade</option>
+                </select>
+              </label>
+
+              <label class="wide"
+                >Section (optional)
+                <input name="section" placeholder="e.g. BSIT 1A" />
+              </label>
+
+              <label class="wide"
+                >Password
+                <div class="password-field">
+                  <input
+                    id="registerPassword"
+                    type="password"
+                    name="password"
+                    minlength="8"
+                    required
+                    placeholder="At least 8 characters"
+                  />
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    data-password-toggle="registerPassword"
+                    aria-label="Show password"
+                  >
+                    <svg class="eye-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </label>
+            </div>
+
+            <p class="form-note">
+              Accounts are available to students aged 12 and above.
+            </p>
+            <button class="primary full">Create account <span>→</span></button>
+          </form>
+        </div>
+
+        <footer>
+          © 2026 ssu.studenthub.com | All rights reserved.
+          <span>Built for the campus community</span>
+        </footer>
+      </main>
+    </section>
+
+    <section id="appView" class="app-layout hidden">
+      <aside class="sidebar">
+        <a class="side-brand" href="#" data-page="dashboard">
+          <span class="brand-mark small">SSU</span>
+          <span>
+            <b>Student Hub</b>
+            <small>SAMAR STATE UNIVERSITY</small>
+          </span>
+        </a>
+
+        <div class="side-label">WORKSPACE</div>
+
+        <nav id="mainNav">
+          <button class="nav-item active" data-page="dashboard">
+            <span>▦</span> Dashboard
+          </button>
+          <button class="nav-item" data-page="profile">
+            <span>◉</span> My profile
+          </button>
+          <button class="nav-item" data-page="schedule">
+            <span>▤</span> Schedule
+          </button>
+          <button class="nav-item" data-page="announcements">
+            <span>◉</span> Announcements
+          </button>
+          <button class="nav-item" data-page="resources">
+            <span>▧</span> Learning resources
+          </button>
+          <button class="nav-item" data-page="settings">
+            <span>⚙</span> Settings
+          </button>
+          <button id="adminNav" class="nav-item hidden" data-page="admin">
+            <span>♜</span> Admin panel
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-icon">✦</div>
+            <b>Need a hand?</b>
+            <p>Keep your school life organized, all in one place.</p>
+          </div>
+          <button id="logoutBtn" class="logout-btn">
+            ↪ <span>Log out</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="pageEyebrow">STUDENT WORKSPACE</p>
+            <h1 id="pageTitle">Dashboard</h1>
+          </div>
+
+          <div class="topbar-right">
+            <span class="date-pill" id="todayDate"></span>
+            <div class="avatar" id="topAvatar">S</div>
+            <div class="top-user">
+              <b id="topName">Student</b>
+              <small id="topProgram">Student</small>
+            </div>
+          </div>
+        </header>
+
+        <div id="pageContent" class="page-content"></div>
+
+        <footer class="app-footer">
+          SSU Student Hub
+          <span>Learning is a journey. Let’s make it easier.</span>
+        </footer>
+      </main>
+    </section>
+
+    <script src="ryann.js"></script>
+  </body>
+</html>
